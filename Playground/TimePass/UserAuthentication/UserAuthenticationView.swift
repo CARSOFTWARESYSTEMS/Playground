@@ -10,8 +10,9 @@ import SwiftData
 
 struct UserAuthenticationView: View {
     
-    @State private var showSubview = false
-    @State private var buttonColor: Color = Color.black
+    @State private var isSwiftDataView = true
+    @State private var buttonColor: Color = Color.white
+    @State private var buttonTitle = "Show CoreData View"
     
     var body: some View {
         NavigationView {
@@ -22,30 +23,34 @@ struct UserAuthenticationView: View {
                     Rectangle().scale(0.85).foregroundColor(foregroundColour.opacity(0.7)).cornerRadius(50)
                     
                     VStack {
-                        Button("Add Users") {
-                            showSubview.toggle()
-                            if showSubview {
-                                buttonColor = Color.white
+                        Button(buttonTitle) {
+                            isSwiftDataView.toggle()
+                            if isSwiftDataView {
+                                buttonTitle = "Show CoreData View"
+                                
                             } else {
-                                buttonColor = Color.black
+                                buttonTitle = "Show SwiftData View"
                             }
                             
                         }.font(.title).foregroundColor(buttonColor)
-                        if showSubview {                            buildDynamicView(condition: showSubview)
-                        }
+                        
+                        buildDynamicView(DataView: isSwiftDataView)
+                        
                     }
                 }
         }
     }
 }
     
-    @ViewBuilder
-    func buildDynamicView(condition: Bool) -> some View {
-        if condition {
-            AddUserView()
-            
+
+@ViewBuilder
+func buildDynamicView(DataView isSwiftDataView: Bool) -> some View {
+        if isSwiftDataView {
+            AddUserView() //SwiftData
         } else {
-            Text("This view is hidden")
+            TaskContentView().environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+            //CoreData
+            
         }
     }
 
@@ -69,7 +74,7 @@ struct AddUserView : View {
                         }
                     }.onDelete(perform: deleteUser)
                 }
-                .navigationTitle("User Authentication")
+                .navigationTitle("SwiftData - User Authentication")
                 .toolbar {
                     Button("Add", action: addUser)
                 }

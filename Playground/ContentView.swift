@@ -8,14 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let persistenceController = PersistenceController.shared
+    
+    var itemsView: [String] = ["ChessView", "SwiftDataView", "CoreDataView"]
+    
+   
+    
     var body: some View {
+        
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            NavigationView {
+                List {
+                    ForEach(itemsView, id: \.self) { item in
+                        NavigationLink(destination: showSubViews(choice: item)) {
+                            Text(item)
+                        }
+                    }
+                }
+               
+            }.navigationTitle("Main Menu")
         }
         .padding()
+    }
+    
+    @ViewBuilder
+    func showSubViews(choice: String) -> some View {
+        switch choice {
+        case "ChessView"     : ChessView()
+        case "SwiftDataView" : UserAuthenticationView()
+        case "CoreDataView"  : TaskContentView().environment(\.managedObjectContext, persistenceController.container.viewContext)
+        default : ChessView()
+            
+            
+            
+
+            
+        }
     }
 }
 

@@ -22,7 +22,7 @@ struct TaskContentView: View {
         NavigationView {
             VStack {
                 HStack {
-                    TextField("New Task", text: $newTaskTitle)
+                    TextField("CoreData Task", text: $newTaskTitle)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     Button(action: addTask) {
@@ -52,7 +52,7 @@ struct TaskContentView: View {
                     .onDelete(perform: deleteTasks)
                 }
             }
-            .navigationTitle("Tasks")
+            .navigationTitle("CoreData - Tasks")
         }
     }
     
