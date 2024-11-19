@@ -10,44 +10,73 @@ import SwiftData
 
 struct UserAuthenticationView: View {
     
+    @State private var showSubview = false
+    @State private var buttonColor: Color = Color.black
+    
+    var body: some View {
+        NavigationView {
+            
+                ZStack {
+                    backgroundColour.ignoresSafeArea()
+                    Rectangle().scale(0.89).foregroundColor(foregroundColour.opacity(0.9)).cornerRadius(50)
+                    Rectangle().scale(0.85).foregroundColor(foregroundColour.opacity(0.7)).cornerRadius(50)
+                    
+                    VStack {
+                        Button("Add Users") {
+                            showSubview.toggle()
+                            if showSubview {
+                                buttonColor = Color.white
+                            } else {
+                                buttonColor = Color.black
+                            }
+                            
+                        }.font(.title).foregroundColor(buttonColor)
+                        if showSubview {                            buildDynamicView(condition: showSubview)
+                        }
+                    }
+                }
+        }
+    }
+}
+    
+    @ViewBuilder
+    func buildDynamicView(condition: Bool) -> some View {
+        if condition {
+            AddUserView()
+            
+        } else {
+            Text("This view is hidden")
+        }
+    }
+
+
+struct AddUserView : View {
+
     @Environment(\.modelContext) private var modelContext
     @Query var users: [UserModel]
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color.teal.ignoresSafeArea()
-                Rectangle().scale(0.89).foregroundColor(.white.opacity(0.15))
-                Rectangle().scale(0.87).foregroundColor(.white.opacity(0.5))
-                Button("Add Users") {
-                    addUser()
+        VStack {
+            NavigationStack {
+                List {
+                    ForEach(users) { user in
+                        VStack(alignment: .leading) {
+                            Text(user.username)
+                                .font(.headline)
+                            
+                            Text(user.password)
+                                .font(.headline)
+                        }
+                    }.onDelete(perform: deleteUser)
+                }
+                .navigationTitle("User Authentication")
+                .toolbar {
+                    Button("Add", action: addUser)
                 }
                 
-                VStack {
-                    NavigationStack {
-                        List {
-                            ForEach(users) { user in
-                                VStack(alignment: .leading) {
-                                    Text(user.username)
-                                        .font(.headline)
-                                    
-                                    Text(user.password)
-                                        .font(.headline)
-                                }
-                            }.onDelete(perform: deleteUser)
-                        }
-                        .navigationTitle("User Authentication")
-                        .toolbar {
-                            Button("Add", action: addUser)
-                        }
-                        
-                    }
-                }
             }
         }
     }
-    
-    
     
     func addUser() {
         
@@ -67,9 +96,7 @@ struct UserAuthenticationView: View {
             modelContext.delete(user)
         }
     }
-    
 }
-
 
 
 #Preview {
