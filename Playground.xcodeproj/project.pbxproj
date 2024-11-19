@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,6 @@
 		187183222C7032D800D8B3CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187183212C7032D800D8B3CE /* ContentView.swift */; };
 		187183242C7032D900D8B3CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187183232C7032D900D8B3CE /* Assets.xcassets */; };
 		187183272C7032D900D8B3CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187183262C7032D900D8B3CE /* Preview Assets.xcassets */; };
-		187183302C70397E00D8B3CE /* ChessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871832F2C70397E00D8B3CE /* ChessView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,8 +19,11 @@
 		187183212C7032D800D8B3CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		187183232C7032D900D8B3CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		187183262C7032D900D8B3CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1871832F2C70397E00D8B3CE /* ChessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChessView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1886A8BA2CEC675000AFD06B /* TimePass */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TimePass; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		187183192C7032D800D8B3CE /* Frameworks */ = {
@@ -53,7 +55,7 @@
 		1871831E2C7032D800D8B3CE /* Playground */ = {
 			isa = PBXGroup;
 			children = (
-				1871832F2C70397E00D8B3CE /* ChessView.swift */,
+				1886A8BA2CEC675000AFD06B /* TimePass */,
 				1871831F2C7032D800D8B3CE /* PlaygroundApp.swift */,
 				187183212C7032D800D8B3CE /* ContentView.swift */,
 				187183232C7032D900D8B3CE /* Assets.xcassets */,
@@ -84,6 +86,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1886A8BA2CEC675000AFD06B /* TimePass */,
 			);
 			name = Playground;
 			productName = Playground;
@@ -142,7 +147,6 @@
 			files = (
 				187183222C7032D800D8B3CE /* ContentView.swift in Sources */,
 				187183202C7032D800D8B3CE /* PlaygroundApp.swift in Sources */,
-				187183302C70397E00D8B3CE /* ChessView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

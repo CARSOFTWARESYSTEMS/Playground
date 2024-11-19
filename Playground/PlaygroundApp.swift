@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct PlaygroundApp: App {
     var body: some Scene {
         WindowGroup {
-            ChessView()
-        }
+            //ChessView()
+            UserAuthenticationView()
+        }.modelContainer(for: [UserModel.self])
     }
 }
