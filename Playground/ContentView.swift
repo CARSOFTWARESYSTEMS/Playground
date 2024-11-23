@@ -11,10 +11,9 @@ struct ContentView: View {
     
     let persistenceController = PersistenceController.shared
     
-    var itemsView: [String] = ["ChessView", "SwiftDataView", "CoreDataView"]
+    var itemsView: [String] = ["ChessView", "SwiftDataView", "CoreDataView", "MVVMContentView"]
     
    
-    
     var body: some View {
         
         VStack {
@@ -25,9 +24,8 @@ struct ContentView: View {
                             Text(item)
                         }
                     }
-                }
-               
-            }.navigationTitle("Main Menu")
+                }.navigationTitle("Main Menu")
+            }
         }
         .padding()
     }
@@ -38,6 +36,7 @@ struct ContentView: View {
         case "ChessView"     : ChessView()
         case "SwiftDataView" : UserAuthenticationView()
         case "CoreDataView"  : TaskContentView().environment(\.managedObjectContext, persistenceController.container.viewContext)
+        case "MVVMContentView": MVVMContentView()
         default : ChessView()
             
             
