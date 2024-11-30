@@ -22,6 +22,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		181CE18D2CFB5C5500E789E0 /* VIPER */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = VIPER; sourceTree = "<group>"; };
 		18570EB02CF1554200B332E3 /* MVVM */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MVVM; sourceTree = "<group>"; };
 		1886A8BA2CEC675000AFD06B /* TimePass */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TimePass; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -56,6 +57,7 @@
 		1871831E2C7032D800D8B3CE /* Playground */ = {
 			isa = PBXGroup;
 			children = (
+				181CE18D2CFB5C5500E789E0 /* VIPER */,
 				18570EB02CF1554200B332E3 /* MVVM */,
 				1886A8BA2CEC675000AFD06B /* TimePass */,
 				1871831F2C7032D800D8B3CE /* PlaygroundApp.swift */,
@@ -90,6 +92,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				181CE18D2CFB5C5500E789E0 /* VIPER */,
 				18570EB02CF1554200B332E3 /* MVVM */,
 				1886A8BA2CEC675000AFD06B /* TimePass */,
 			);
