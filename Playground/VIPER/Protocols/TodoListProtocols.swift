@@ -12,22 +12,17 @@ protocol TodoListRouterProtocol {
     static func createModule() -> AnyView
 }
 
-//Protocol for Presentor (View will be using this protocol)
+//ViewToPresenter | Protocol for Presenter (View will call this method)
 protocol TodoListPresenterProtocol: AnyObject {
     func viewDidLoad()
 }
 
-//Protocol for View (View will be using this protocol)
-protocol TodoListViewProtocol: AnyObject {
-    func showTasks(_ tasks: [TaskEntity])
-}
-
-//Protocol for Interactor (Presentor will be using this protocol)
+//PresenterToInteractor | Protocol for Interactor (Presentor will ask Interactor to fetch the data)
 protocol TodoListInteractorProtocol: AnyObject {
     func fetchTasks()
 }
 
-//Protocol for Interactor Response (Presentor will be using this protocol)
+//InteractorToPresenter | Protocol for Presenter (Interactor Response) (Presentor will be using this protocol)
 protocol TodoListInteractorOutputProtocol: AnyObject {
     func didFetchTasks(_ tasks: [TaskEntity])
 }
