@@ -8,6 +8,7 @@
 
 
 class TodoListInteractor: TodoListInteractorProtocol {
+    
     weak var presenter: TodoListInteractorOutputProtocol?
 
     func fetchTasks() {

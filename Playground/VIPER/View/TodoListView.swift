@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TodoListView: View {
+    
     @ObservedObject var presenter: TodoListPresenter
 
     var body: some View {

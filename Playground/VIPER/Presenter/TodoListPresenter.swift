@@ -9,6 +9,7 @@ import Foundation
 
 
 class TodoListPresenter: ObservableObject, TodoListPresenterProtocol, TodoListInteractorOutputProtocol {
+    
     @Published var tasks: [TaskEntity] = []
 
     private var interactor: TodoListInteractorProtocol
