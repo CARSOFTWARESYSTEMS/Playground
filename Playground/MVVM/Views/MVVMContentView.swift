@@ -19,7 +19,7 @@ struct AppEnvironment0 {
 
 struct MVVMContentView: View {
     
-    @State var appEnvironment = AppEnvironment0()
+    @State var appEnvironment0 = AppEnvironment0()
     
     var body: some View {
         VStack {

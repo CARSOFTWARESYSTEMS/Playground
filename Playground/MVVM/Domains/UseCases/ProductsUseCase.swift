@@ -23,6 +23,7 @@ class ProductsUseCaseImpl: ProductsUseCase {
     
     func executeProducts() -> AnyPublisher<[Company], Error> {
         return repository.fetchAllProducts()
+        
     }
     
     func executeProductDetails() -> AnyPublisher<ProductDetails, Error> {
