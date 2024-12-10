@@ -11,7 +11,7 @@ struct ContentView: View {
     
     let persistenceController = PersistenceController.shared
     
-    var itemsView: [String] = ["ChessView", "SwiftDataView", "CoreDataView", "MVVMContentView", "VIPERView"]
+    var itemsView: [String] = ["ChessView", "SwiftDataView", "CoreDataView", "MVVMContentView", "VIPERView", "AES256ContentView"]
     
    
     var body: some View {
@@ -38,6 +38,7 @@ struct ContentView: View {
         case "CoreDataView"  : TaskContentView().environment(\.managedObjectContext, persistenceController.container.viewContext)
         case "MVVMContentView": MVVMContentView()
         case "VIPERView" : TodoListRouter.createModule()
+        case "AES256ContentView": AES256ContentView()
         default : ChessView()
             
             
