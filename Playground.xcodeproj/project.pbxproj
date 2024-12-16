@@ -26,6 +26,7 @@
 		1856E6CE2D083933008593B2 /* Security-AES256 */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Security-AES256"; sourceTree = "<group>"; };
 		18570EB02CF1554200B332E3 /* MVVM */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MVVM; sourceTree = "<group>"; };
 		1886A8BA2CEC675000AFD06B /* TimePass */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TimePass; sourceTree = "<group>"; };
+		18C5D8ED2D1013DF008F7D89 /* LinkedList */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = LinkedList; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 		1871831E2C7032D800D8B3CE /* Playground */ = {
 			isa = PBXGroup;
 			children = (
+				18C5D8ED2D1013DF008F7D89 /* LinkedList */,
 				1856E6CE2D083933008593B2 /* Security-AES256 */,
 				181CE18D2CFB5C5500E789E0 /* VIPER */,
 				18570EB02CF1554200B332E3 /* MVVM */,
@@ -98,6 +100,7 @@
 				1856E6CE2D083933008593B2 /* Security-AES256 */,
 				18570EB02CF1554200B332E3 /* MVVM */,
 				1886A8BA2CEC675000AFD06B /* TimePass */,
+				18C5D8ED2D1013DF008F7D89 /* LinkedList */,
 			);
 			name = Playground;
 			productName = Playground;

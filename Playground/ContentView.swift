@@ -11,7 +11,7 @@ struct ContentView: View {
     
     let persistenceController = PersistenceController.shared
     
-    var itemsView: [String] = ["ChessView", "SwiftDataView", "CoreDataView", "MVVMContentView", "VIPERView", "AES256ContentView"]
+    var itemsView: [String] = ["ChessView", "SwiftDataView", "CoreDataView", "MVVMContentView", "VIPERView", "AES256ContentView", "LinkedListContentView"]
     
    
     var body: some View {
@@ -39,6 +39,7 @@ struct ContentView: View {
         case "MVVMContentView": MVVMContentView()
         case "VIPERView" : TodoListRouter.createModule()
         case "AES256ContentView": AES256ContentView()
+        case "LinkedListContentView": LinkedListContentView()
         default : ChessView()
             
             
